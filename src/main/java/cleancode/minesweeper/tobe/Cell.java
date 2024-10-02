@@ -59,7 +59,7 @@ public class Cell {
         return this.nearByLandMineCount != 0;
     }
 
-    public String geSign() {
+    public String getSign() {
         if (isOpened) {
             if (isLandMine) {
                 return LAND_MINE_SIGN;
