@@ -1,20 +1,8 @@
 package cleancode.minesweeper.tobe.cell;
 
-public class LandMineCell extends Cell2 {
+public class LandMineCell extends Cell {
 
     private static final String LAND_MINE_SIGN = "☼";
-
-    private boolean isLandMine;
-
-    @Override
-    public void turnOnLandMine() {
-        this.isLandMine = true;
-    }
-
-    @Override
-    public void updateNearByLandMineCount(int count) {
-        throw new UnsupportedOperationException("지원하지 않는 기능");
-    }
 
     @Override
     public boolean isLandMine() {
