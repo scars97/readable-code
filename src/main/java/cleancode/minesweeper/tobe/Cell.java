@@ -19,7 +19,7 @@ public class Cell {
         this.isOpened = isOpened;
     }
 
-    public static Cell of( int nearByLandMineCount, boolean isLandMine, boolean isFlagged, boolean isOpened) {
+    public static Cell of(int nearByLandMineCount, boolean isLandMine, boolean isFlagged, boolean isOpened) {
         return new Cell(nearByLandMineCount, isLandMine, isFlagged, isOpened);
     }
 
