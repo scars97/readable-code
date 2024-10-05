@@ -18,7 +18,6 @@ public interface OutputHandler {
 
      void showCommentForUserAction();
 
-
      void showExceptionMessage(GameException e);
 
      void showSimpleMessage(String message);
