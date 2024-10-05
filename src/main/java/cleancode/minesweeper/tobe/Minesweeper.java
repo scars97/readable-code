@@ -10,7 +10,6 @@ import cleancode.minesweeper.tobe.position.CellPosition;
 public class Minesweeper implements GameInitialize, GameRun {
 
     private final GameBoard gameBoard;
-    private final BoardIndexConverter boardIndexConverter = new BoardIndexConverter();
     private final InputHandler inputHandler;
     private final OutputHandler outputHandler;
     private int gameStatus = 0; // 0: 게임 중, 1: 승리, -1: 패배
@@ -112,7 +111,7 @@ public class Minesweeper implements GameInitialize, GameRun {
     }
 
     private void checkIfGameIsOver() {
-        if (gameBoard.isAllChecked()) {
+        if (gameBoard.isAllCellChecked()) {
             changeGameStatusToWin();
         }
     }

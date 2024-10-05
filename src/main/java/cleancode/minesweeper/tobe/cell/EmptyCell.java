@@ -1,6 +1,6 @@
 package cleancode.minesweeper.tobe.cell;
 
-public class EmptyCell implements Cell {
+public class EmptyCell implements BoardCell {
 
     private static final String EMPTY_SIGN = "■";
 

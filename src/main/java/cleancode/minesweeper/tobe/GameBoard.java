@@ -11,24 +11,24 @@ import java.util.Random;
 
 public class GameBoard {
 
-    private final Cell[][] board;
-    public final int landMineCount;
+    private final BoardCell[][] board;
+    private final int landMineCount;
 
     public GameBoard(GameLevel gameLevel) {
         int rowSize = gameLevel.getRowSize();
         int colSize = gameLevel.getColSize();
-        board = new Cell[rowSize][colSize];
+        board = new BoardCell[rowSize][colSize];
 
         landMineCount = gameLevel.getLandMineCount();
     }
 
     public void flagAt(CellPosition cellPosition) {
-        Cell cell = findCell(cellPosition);
+        BoardCell cell = findCell(cellPosition);
         cell.flag();
     }
 
     public void openAt(CellPosition cellPosition) {
-        Cell cell = findCell(cellPosition);
+        BoardCell cell = findCell(cellPosition);
         cell.open();
     }
 
@@ -51,24 +51,24 @@ public class GameBoard {
     }
 
     private boolean doesCellHaveLandMineCount(CellPosition cellPosition) {
-        Cell cell = findCell(cellPosition);
+        BoardCell cell = findCell(cellPosition);
         return cell.hasLandMineCount();
     }
 
     private boolean isOpenedCell(CellPosition cellPosition) {
-        Cell cell = findCell(cellPosition);
+        BoardCell cell = findCell(cellPosition);
         return cell.isOpened();
     }
 
     public boolean isLandMineCellAt(CellPosition cellPosition) {
-        Cell cell = findCell(cellPosition);
+        BoardCell cell = findCell(cellPosition);
         return cell.isLandMine();
     }
 
-    public boolean isAllChecked() {
+    public boolean isAllCellChecked() {
         return Arrays.stream(board)
                 .flatMap(Arrays::stream)
-                .allMatch(Cell::isChecked);
+                .allMatch(BoardCell::isChecked);
     }
 
     public boolean isInvalidCellPosition(CellPosition cellPosition) {
@@ -113,11 +113,11 @@ public class GameBoard {
     }
 
     public String getSign(CellPosition cellPosition) {
-        Cell cell = findCell(cellPosition);
+        BoardCell cell = findCell(cellPosition);
         return cell.getSign();
     }
 
-    private Cell findCell(CellPosition cellPosition) {
+    private BoardCell findCell(CellPosition cellPosition) {
         return board[cellPosition.getRowIndex()][cellPosition.getColIndex()];
     }
 

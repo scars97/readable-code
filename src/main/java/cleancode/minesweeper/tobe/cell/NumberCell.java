@@ -1,6 +1,6 @@
 package cleancode.minesweeper.tobe.cell;
 
-public class NumberCell implements Cell {
+public class NumberCell implements BoardCell {
 
     private final int nearbyLandMinCount;
 

@@ -1,6 +1,6 @@
 package cleancode.minesweeper.tobe.cell;
 
-public interface Cell {
+public interface BoardCell {
 
     String FLAG_SIGN = "⚑";
     String UNCHECKED_SIGN = "□";
