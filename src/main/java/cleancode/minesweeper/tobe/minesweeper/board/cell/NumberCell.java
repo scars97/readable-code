@@ -42,7 +42,7 @@ public class NumberCell implements BoardCell {
 
     @Override
     public boolean isChecked() {
-        return cellState.isChecked();
+        return cellState.isOpened();
     }
 
     @Override
